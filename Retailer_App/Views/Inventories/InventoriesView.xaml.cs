@@ -1,21 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Retailer_App.ViewModels;
 using Retailer_App.Models;
-using System.Globalization;
-using System.Data;
 using System.ComponentModel;
 
 namespace Retailer_App.Views.Inventories
@@ -27,6 +15,7 @@ namespace Retailer_App.Views.Inventories
         public static string InvDesc;
         public static string InvUser;
         public static string InvType;
+        public static string InvStatus;
         public static string startDate;
         public static string endDate;
         public static string ComboBoxValue;
@@ -44,6 +33,7 @@ namespace Retailer_App.Views.Inventories
         private void ResetComponent()
         {
             vm.Model = new Inventory();
+            BtnEdit.Visibility = Visibility.Hidden;
         }
         private void TblData_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
@@ -82,6 +72,7 @@ namespace Retailer_App.Views.Inventories
             InvDesc = vm.Model.Description;
             InvUser = vm.Model.Users.Name;
             InvType = vm.Model.Type;
+            InvStatus = vm.Model.Status;
             App.Dashboard.PnlContent.Children.Clear();
             App.Dashboard.PnlContent.Children.Add(new EditorView());
         }

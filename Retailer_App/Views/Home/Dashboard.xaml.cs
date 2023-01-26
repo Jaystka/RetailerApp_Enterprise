@@ -1,18 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using Retailer_App.ViewModels;
-using Retailer_App.Models;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Retailer_App.Views.Inventories;
 
 namespace Retailer_App.Views.Home

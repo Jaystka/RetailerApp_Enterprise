@@ -9,6 +9,12 @@ namespace Retailer_App.Views.Inventories
     /// </summary>
     public partial class EditorView : UserControl
     {
+        public static string EditUid;
+        public static string EditStatus;
+        public static string EditDesc;
+        public static string EditType;
+        public static string EditDate;
+        public static string ComboBoxValue;
         public EditorView()
         {
             InitializeComponent();
@@ -27,6 +33,7 @@ namespace Retailer_App.Views.Inventories
             {
                 BoxType.SelectedIndex = 1;
             }
+            TxtStatus.Text = InventoriesView.InvStatus; 
         }
         private InventoryViewModel vm;
         private void ResetComponent()
@@ -44,7 +51,15 @@ namespace Retailer_App.Views.Inventories
         }
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-
+            if (BoxType.SelectedIndex != -1)
+            {
+                ComboBoxItem selectedItem = (ComboBoxItem)BoxType.SelectedItem;
+                ComboBoxValue = selectedItem.Content.ToString();
+            }
+            EditUid = TxtUid.Text;
+            EditDesc = TxtDesc.Text;
+            EditType = ComboBoxValue;
+            EditDate = CurDate.Text;
         }
         private void BtnReset_Click(object sender, RoutedEventArgs e)
         {

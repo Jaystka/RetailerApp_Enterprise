@@ -186,11 +186,10 @@ namespace Retailer_App.ViewModels
                 dbconn.OpenConnection();
                 var state = check ? "1" : "0";
                 var query = $"UPDATE inventories SET " +
-                            $"name = '{model.Users}', " +
-                            $"username = '{model.Type}', " +
-                            $"keypass = '{model.Description}', " +
-                            $"status = '{state}' " +
-                            $"WHERE uid = '{model.Uid}'";
+                            $"logdate = '{EditorView.EditDate}', " +
+                            $"type = '{EditorView.EditType}', " +
+                            $"description = '{EditorView.EditDesc}', " +
+                            $"WHERE uid = '{EditorView.EditUid}'";
                 var sqlcmd = new SqlCommand(query, dbconn.SqlConnect);
                 sqlcmd.ExecuteNonQuery();
                 dbconn.CloseConnection();

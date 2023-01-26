@@ -76,9 +76,8 @@
             <!--Kotak Tengah DATA USER-->
             <DataGrid x:Name="TblData" Grid.Row="1" Margin="9,9,9,9"
                   HeadersVisibility="Column" EnableRowVirtualization="False"
-                  CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False"
-                  AlternatingRowBackground="LightGray" SelectedCellsChanged="TblData_SelectedCellsChanged" 
-                  ItemsSource="{Binding Collection}" SelectedItem="{Binding Model}" FontSize="16 ">
+                  CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" SelectedCellsChanged="TblData_SelectedCellsChanged" 
+                  ItemsSource="{Binding Collection}" SelectedItem="{Binding Model}" BorderThickness="0" FontSize="14">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="CODE" Binding="{Binding Uid}" Width="auto" FontSize="16"/>
                     <DataGridTextColumn Header="NAME" Binding="{Binding Name}" Width="*" FontSize="16"/>

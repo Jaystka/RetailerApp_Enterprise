@@ -1,5 +1,4 @@
-﻿
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using Retailer_App.ViewModels;
 using Retailer_App.Models;
@@ -7,9 +6,6 @@ using Retailer_App.Models;
 
 namespace Retailer_App.Views.Home
 {
-    /// <summary>
-    /// Interaction logic for UsersView.xaml
-    /// </summary>
     public partial class UsersView : UserControl
     {
         public static string UserUid;

@@ -75,14 +75,12 @@
             <!--Kotak Tengah DATA USER-->
             <DataGrid x:Name="TblData" Grid.Row="1" Margin="9,9,9,9"
                     HeadersVisibility="Column" EnableRowVirtualization="False"
-                  CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False"
-                  AlternatingRowBackground="LightGray" SelectedCellsChanged="TblData_SelectedCellsChanged" 
+                  CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" SelectedCellsChanged="TblData_SelectedCellsChanged" 
                   ItemsSource="{Binding Collection}" SelectedItem="{Binding Model}" FontSize="14">
                 <DataGrid.Columns>
                         <DataGridTextColumn Header="CODE" Binding="{Binding Uid}" Width="auto"/>
                         <DataGridTextColumn Header="PRODUCT" Binding="{Binding Products.Name}" Width="*"/>
-                        <DataGridTextColumn Header="STOCK" Binding="{Binding Qty}" Width="*"/>
-                        <!-- <DataGridTextColumn Header="TYPE" Binding="{Binding Keypass}" Visibility="Hidden"/>-->
+                    <DataGridTextColumn Header="STOCK" Binding="{Binding Qty}" Width="*"/>
                 </DataGrid.Columns>
             </DataGrid>
             <Grid Grid.Row="2">

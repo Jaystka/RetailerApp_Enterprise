@@ -91,7 +91,6 @@
                 <RowDefinition Height="34*"/>
             </Grid.RowDefinitions>
             <Label Content="DATA USER" Grid.Row="0" Style="{StaticResource Title_Label}" Margin="10,1,1,20"/>
-            <!--Kotak Tengah DATA USER-->
             <DataGrid x:Name="TblData" Grid.Row="1" Margin="13.5,9,13.5,9"
                   HeadersVisibility="Column" EnableRowVirtualization="False"
                   CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False"
