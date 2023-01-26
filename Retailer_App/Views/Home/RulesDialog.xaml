@@ -1,0 +1,107 @@
+﻿<Window x:Class="Retailer_App.Views.Home.RulesDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Retailer_App.Views.Home"
+        mc:Ignorable="d"
+       
+        Title="RulesDialog" Height="400" Width="500">
+
+    <Window.Resources>
+        <Style TargetType="Label" x:Key="Title_Label">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="VerticalContentAlignment" Value="Bottom"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style TargetType="Label" x:Key="Isi_Label">
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="VerticalContentAlignment" Value="Bottom"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="#FF366ABD">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="71*"/>
+            <ColumnDefinition Width="203*"/>
+            <ColumnDefinition Width="226*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="85*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.ColumnSpan="3" Margin="0,0,0,326" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="133*"/>
+                <ColumnDefinition Width="368*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Menu" Style="{StaticResource Title_Label}"
+               Margin="15,0,0,0" Grid.ColumnSpan="2"/>
+            <Label Content="User" Style="{StaticResource Isi_Label}"
+               Margin="68,0,0,5" Grid.Column="1"/>
+            <TextBox x:Name="User" Text="{Binding User.Uid, Mode=TwoWay}" 
+                 TextWrapping="Wrap" Margin="118,25,50,10" Grid.Column="1"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="40*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+
+                <ListBox Margin="10,0,10,10">
+                    <Label Content="Users View" Style="{StaticResource Isi_Label}" 
+                           Margin="35,0,0,0"/>
+                    <CheckBox x:Name="ChkUsersView" 
+                              IsChecked="{Binding Menu1.IsChecked, Mode=TwoWay}" 
+                              Margin="20,-26,0,0" Checked="ChkUsersView_Checked"/>
+                    <Label Content="Inventories" Style="{StaticResource Isi_Label}" 
+                           Margin="35,-20,0,0"/>
+                    <CheckBox x:Name="ChkInventories" 
+                              IsChecked="{Binding IsCheck, Mode=TwoWay}" 
+                              Margin="20,-26,0,0" Checked="ChkInventories_Checked"/>
+                    <Label Content="Inventory" Style="{StaticResource Isi_Label}" 
+                           Margin="55,-20,0,0"/>
+                    <CheckBox x:Name="ChkInventory" 
+                              IsChecked="{Binding IsCheck, Mode=TwoWay}" 
+                              Margin="40,-26,0,0" Checked="ChkInventory_Checked"/>
+                    <Label Content="Stock" Style="{StaticResource Isi_Label}" 
+                           Margin="55,-20,0,0"/>
+                    <CheckBox x:Name="ChkStock" 
+                              IsChecked="{Binding IsCheck, Mode=TwoWay}" 
+                              Margin="40,-26,0,0" Checked="ChkStock_Checked"/>
+                    <Label Content="Product" Style="{StaticResource Isi_Label}" 
+                           Margin="55,-20,0,0"/>
+                    <CheckBox x:Name="ChkProduct" 
+                              IsChecked="{Binding IsCheck, Mode=TwoWay}" 
+                              Margin="40,-26,0,0" Checked="ChkProduct_Checked"/>
+                    <Label Content="Backup Databse" Style="{StaticResource Isi_Label}" 
+                           Margin="35,-20,0,0"/>
+                    <CheckBox x:Name="ChkBackup" 
+                              IsChecked="{Binding IsCheck, Mode=TwoWay}" 
+                              Margin="20,-26,0,0" Checked="ChkBackup_Checked"/>
+                </ListBox>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="40*"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="BtnSave"  Foreground="White" Content="SAVE" Click="BtnSave_Click" Grid.Row="1" Margin="15,0,15,75" Background="DarkGray" FontFamily="Kozuka Gothic Pr6N B"/>
+                <Button x:Name="BtnClose"  Foreground="White" Content="CLOSE" Click="BtnClose_Click" Grid.Row="1" Margin="15,65,15,10" Background="DarkGray" FontFamily="Kozuka Gothic Pr6N B"/>
+                <ListBox ItemsSource="{Binding Collection}" SelectedItem="{Binding Model}" Foreground="Black" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Users.Uid}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
