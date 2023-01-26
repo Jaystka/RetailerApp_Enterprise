@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using Retailer_App.Models;
+using Retailer_App.ViewModels;
 
 namespace Retailer_App.Views.Inventories
 {
@@ -12,8 +12,16 @@ namespace Retailer_App.Views.Inventories
         public EditorView()
         {
             InitializeComponent();
+            vm = new InventoryViewModel();
+            vm.OnCallBack += ResetComponent;
+            DataContext = vm;
+            ResetComponent();
         }
+        private InventoryViewModel vm;
+        private void ResetComponent()
+        {
 
+        }
         private void BtnShow_Click(object sender, RoutedEventArgs e)
         {
             
