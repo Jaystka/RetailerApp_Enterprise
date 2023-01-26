@@ -92,15 +92,6 @@
                 </Grid.RowDefinitions>
                 <Button x:Name="BtnSave"  Foreground="White" Content="SAVE" Click="BtnSave_Click" Grid.Row="1" Margin="15,0,15,75" Background="DarkGray" FontFamily="Kozuka Gothic Pr6N B"/>
                 <Button x:Name="BtnClose"  Foreground="White" Content="CLOSE" Click="BtnClose_Click" Grid.Row="1" Margin="15,65,15,10" Background="DarkGray" FontFamily="Kozuka Gothic Pr6N B"/>
-                <ListBox ItemsSource="{Binding Collection}" SelectedItem="{Binding Model}" Foreground="Black" >
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel>
-                                <TextBlock Text="{Binding Users.Uid}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
             </Grid>
         </Grid>
     </Grid>
