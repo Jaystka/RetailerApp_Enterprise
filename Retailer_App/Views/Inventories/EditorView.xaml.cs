@@ -16,6 +16,17 @@ namespace Retailer_App.Views.Inventories
             vm.OnCallBack += ResetComponent;
             DataContext = vm;
             ResetComponent();
+            TxtUid.Text = InventoriesView.InvUid;
+            TxtDesc.Text = InventoriesView.InvDesc;
+            TxtName.Text = InventoriesView.InvUser;
+            if(InventoriesView.InvType == "IN")
+            {
+                BoxType.SelectedIndex = 0;
+            }
+            else if(InventoriesView.InvType == "OUT")
+            {
+                BoxType.SelectedIndex = 1;
+            }
         }
         private InventoryViewModel vm;
         private void ResetComponent()
@@ -46,7 +57,7 @@ namespace Retailer_App.Views.Inventories
             App.Dashboard.PnlContent.Children.Add(new InventoriesView());
         }
 
-        private void FontsCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void BoxType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
@@ -55,5 +66,16 @@ namespace Retailer_App.Views.Inventories
         {
 
         }
+
+        private void TxtName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
+
+        private void TxtUid_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
+
     }
 }

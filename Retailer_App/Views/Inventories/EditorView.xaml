@@ -26,12 +26,14 @@
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="15*"/>
-            <RowDefinition Height="7*"/>
-            <RowDefinition Height="16*"/>
-            <RowDefinition Height="7*"/>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="108*"/>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="180*"/>
+            <RowDefinition Height="56*"/>
+            <RowDefinition Height="205*"/>
+            <RowDefinition Height="102*"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -39,48 +41,59 @@
             <ColumnDefinition Width="17*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="0" Grid.ColumnSpan="2" >
-            <Label Content="DATA INVENTORIES" Style="{StaticResource Title_Label}" Margin="10,1,1,20"/>
-            <Label Content="Name" Style="{StaticResource Isi_Label}" Margin="437,18,270,12"/>
-            <TextBox x:Name="TxtName" Text="{Binding Model.Name, Mode=TwoWay}" TextWrapping="Wrap" Margin="500,115,400,10" />
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,17" Grid.RowSpan="3" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="109*"/>
+                <RowDefinition Height="45*"/>
+            </Grid.RowDefinitions>
+            <Label Content="DATA INVENTORIES" Style="{StaticResource Title_Label}" Margin="10,42,1,0" VerticalAlignment="Top"/>
+            <Label Content="Name" Style="{StaticResource Isi_Label}" Margin="438,2,866,10" Grid.Row="1"/>
+            <TextBox x:Name="TxtName" TextWrapping="Wrap" Margin="500,6,400,5" TextChanged="TxtName_TextChanged" Grid.Row="1" />
         </Grid>
-        <Grid Grid.Row="1" Grid.Column="0">
-            <Label x:Name="LblUid" Content="Code" Style="{StaticResource Isi_Label}" Margin="37,-3,492,2"/>
-            <Label x:Name="Description" Content="Description" Style="{StaticResource Isi_Label}" Margin="316,-3,170,2"/>
-            <Label x:Name="Type" Content="Type" Style="{StaticResource Isi_Label}" Margin="435,-2,100,2" RenderTransformOrigin="0.657,0.454"/>
+        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,198,15" Grid.RowSpan="2">
+            <Label x:Name="LblUid" Content="Code" Style="{StaticResource Isi_Label}" Margin="37,18,1074,10"/>
 
-            <TextBox x:Name="TxtUid" Text="{Binding Model.Uid, Mode=TwoWay}" TextWrapping="Wrap" Margin="94,37,984,2"/>
-            <ComboBox x:Name="FontsCombo" Margin="490,8,584,6" DisplayMemberPath="Source" SelectionChanged="FontsCombo_SelectionChanged">
-                <ComboBoxItem>Bumbu Dapur</ComboBoxItem>
-                <ComboBoxItem>Barang Elektronnik</ComboBoxItem>
+            <Label x:Name="Type" Content="Type" Style="{StaticResource Isi_Label}" Margin="435,13,678,15" RenderTransformOrigin="0.657,0.454"/>
+
+            <TextBox x:Name="TxtUid" TextWrapping="Wrap" Margin="94,25,984,5" TextChanged="TxtUid_TextChanged"/>
+            <ComboBox x:Name="BoxType" Margin="490,17,584,15" SelectionChanged="BoxType_SelectionChanged">
+                <ComboBoxItem>IN</ComboBoxItem>
+                <ComboBoxItem>OUT</ComboBoxItem>
             </ComboBox>
         </Grid>
-        <Grid Grid.Row="2" Grid.Column="0">
+        <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,198,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="109*"/>
+                <RowDefinition Height="39*"/>
+                <RowDefinition Height="32*"/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="229*"/>
                 <ColumnDefinition Width="44*"/>
                 <ColumnDefinition Width="311*"/>
             </Grid.ColumnDefinitions>
-            <Label x:Name="CurrentDate" Content="Current Date" Style="{StaticResource Isi_Label}" Margin="36,-23,443,39" Grid.ColumnSpan="3" />
-            <TextBox x:Name="CrDate" TextWrapping="Wrap" Margin="140,82,229,39"/>
-            <TextBox x:Name="Desk" TextWrapping="Wrap" Margin="10,0,10,0" Grid.ColumnSpan="2" Grid.Column="1"/>
+            <Label x:Name="Description" Content="Description" Style="{StaticResource Isi_Label}" Margin="454,0,618,79" Grid.ColumnSpan="3"/>
+            <TextBox x:Name="CrDate" TextWrapping="Wrap" Margin="156,6,213,5" Grid.Row="1"/>
+            <TextBox x:Name="TxtDesc" TextWrapping="Wrap" Margin="0,0,10,0" Grid.Column="2" Grid.RowSpan="3"/>
+            <Label Content="Current Date" HorizontalAlignment="Left" Margin="45,1,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="29" Grid.Row="1" Width="94"/>
+            <Grid Grid.Column="1"/>
         </Grid>
-        <Grid Grid.Row="3" Grid.Column="0">
-            <ComboBox Margin="28,5,120,6">
+        <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,15,198,0">
+            <ComboBox Margin="28,10,214,6">
 
             </ComboBox>
-            <TextBox Margin="491,5,10,5" />
+            <TextBox Margin="1062,8,20,7" />
         </Grid>
-        <Grid Grid.Row="4" Grid.Column="0">
-            <DataGrid Margin="26,5,9,5" SelectionChanged="DataGrid_SelectionChanged">
+        <Grid Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,15,198,0">
+            <DataGrid Margin="122,29,76,5" SelectionChanged="DataGrid_SelectionChanged">
 
             </DataGrid>
         </Grid>
-        <Grid Grid.Row="5" Grid.Column="0">
-            <Label Content="Status" Style="{StaticResource Isi_Label}" Margin="163,10,470,65"/>
-            <TextBox TextWrapping="Wrap" Margin="228,0,425,55" Height="37" VerticalAlignment="Bottom"/>
+        <Grid Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,205,198,0" Grid.RowSpan="2">
+            <Label Content="Status" Style="{StaticResource Isi_Label}" Margin="163,23,470,52"/>
+            <TextBox TextWrapping="Wrap" Margin="228,0,425,55" Height="23" VerticalAlignment="Bottom"/>
         </Grid>
-        <Grid Grid.Column="1" Margin="0,140,0,0" Grid.RowSpan="6">
+        <Grid Grid.Column="1" Margin="0,32,0,0" Grid.RowSpan="7" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>

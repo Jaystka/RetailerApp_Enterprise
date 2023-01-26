@@ -42,7 +42,7 @@
                Margin="15,0,0,0" Grid.ColumnSpan="2"/>
             <Label Content="User" Style="{StaticResource Isi_Label}"
                Margin="68,0,0,5" Grid.Column="1"/>
-            <TextBox x:Name="User" Text="{Binding User.Uid, Mode=TwoWay}" 
+            <TextBox x:Name="User" Text="luthfa"
                  TextWrapping="Wrap" Margin="118,25,50,10" Grid.Column="1"/>
         </Grid>
         <Grid Grid.Row="1" Grid.ColumnSpan="3">

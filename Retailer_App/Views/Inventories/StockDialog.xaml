@@ -77,7 +77,7 @@
                     HeadersVisibility="Column" EnableRowVirtualization="False"
                   CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False"
                   AlternatingRowBackground="LightGray" SelectedCellsChanged="TblData_SelectedCellsChanged" 
-                  ItemsSource="{Binding Collection}" SelectedItem="{Binding Model}">
+                  ItemsSource="{Binding Collection}" SelectedItem="{Binding Model}" FontSize="14">
                 <DataGrid.Columns>
                         <DataGridTextColumn Header="CODE" Binding="{Binding Uid}" Width="auto"/>
                         <DataGridTextColumn Header="PRODUCT" Binding="{Binding Products.Name}" Width="*"/>

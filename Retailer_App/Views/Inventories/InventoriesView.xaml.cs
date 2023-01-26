@@ -23,6 +23,10 @@ namespace Retailer_App.Views.Inventories
 
     public partial class InventoriesView : UserControl
     {
+        public static string InvUid;
+        public static string InvDesc;
+        public static string InvUser;
+        public static string InvType;
         public static string startDate;
         public static string endDate;
         public static string ComboBoxValue;
@@ -74,6 +78,10 @@ namespace Retailer_App.Views.Inventories
         }
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
+            InvUid = vm.Model.Uid;
+            InvDesc = vm.Model.Description;
+            InvUser = vm.Model.Users.Name;
+            InvType = vm.Model.Type;
             App.Dashboard.PnlContent.Children.Clear();
             App.Dashboard.PnlContent.Children.Add(new EditorView());
         }

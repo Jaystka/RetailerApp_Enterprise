@@ -71,11 +71,11 @@
             </Grid.RowDefinitions>
             <Label Content="Inventories" Grid.Row="0" Style="{StaticResource Title_Label}" Margin="10,1,1,20"/>
             <Label Style="{StaticResource Isi_Label}" Margin="10,23,0,0" RenderTransformOrigin="0.512,0.04" FontSize="26" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <DatePicker x:Name="StartDate"   SelectedDateChanged="SdatePicker_SelectedDateChanged" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="29" Margin="323,65,0,0" />
+            <DatePicker x:Name="StartDate"   SelectedDateChanged="SdatePicker_SelectedDateChanged" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="31" Margin="323,63,0,0" />
 
             <Label Content="/" Style="{StaticResource Isi_Label}" Margin="481,63,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <DatePicker x:Name="EndDate" SelectedDateChanged="EdatePicker_SelectedDateChanged" Margin="0,65,0,0" Width="150" Height="29" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <ComboBox x:Name="BoxType" HorizontalAlignment="Left" Margin="181,68,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="BoxType_SelectionChanged">
+            <DatePicker x:Name="EndDate" SelectedDateChanged="EdatePicker_SelectedDateChanged" Margin="0,63,0,0" Width="150" Height="31" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <ComboBox x:Name="BoxType" HorizontalAlignment="Left" Margin="181,63,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="BoxType_SelectionChanged" Height="27">
                 <ComboBoxItem Content="IN"/>
                 <ComboBoxItem Content="OUT"/>
             </ComboBox>
@@ -84,7 +84,7 @@
                   HeadersVisibility="Column" EnableRowVirtualization="False"
                   CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False"
                   AlternatingRowBackground="LightGray" SelectedCellsChanged="TblData_SelectedCellsChanged" 
-                  ItemsSource="{Binding Collection}" SelectedItem="{Binding Model}" SelectionChanged="TblData_SelectionChanged" Grid.RowSpan="2">
+                  ItemsSource="{Binding Collection}" SelectedItem="{Binding Model}" SelectionChanged="TblData_SelectionChanged" Grid.RowSpan="2" FontSize="14">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="CODE" Binding="{Binding Uid}" Width="auto" />
                     <DataGridTextColumn Header="LOGDATE" Binding="{Binding LogDate}" Width="*"/>

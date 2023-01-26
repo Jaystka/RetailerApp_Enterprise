@@ -9,7 +9,7 @@ namespace Retailer_App.Views.Home
     /// </summary>
     public partial class RulesDialog : Window
     {
-        private static string name;
+       // private static string name;
         public RulesDialog()
         {
             InitializeComponent();
